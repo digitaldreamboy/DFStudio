@@ -1,0 +1,354 @@
+# Development Feasibility Studio — Repository Context
+
+## 1. Project Overview
+
+**Project:** Development Feasibility Studio (DF Studio)  
+**Stage:** Early working prototype / commercial validation  
+**Primary market:** Canada, initially Ontario and Québec  
+**Product category:** Real estate development research, feasibility analysis, scenario modeling, and decision-support software.
+
+DF Studio is an evidence-led application designed to help real estate developers, investors, consultants, and property professionals evaluate potential development opportunities.
+
+The platform combines:
+
+- Property and parcel research
+- Zoning and land-use analysis
+- Environmental and infrastructure constraints
+- Development scenario exploration
+- Financial feasibility modeling
+- Risk identification
+- Source-linked due diligence
+- Investor-oriented reporting
+
+**Core value proposition:**
+
+Help property professionals determine which development opportunities warrant further investigation before committing substantial capital to professional studies, acquisition, or construction planning.
+
+DF Studio is a preliminary decision-support tool, not a replacement for licensed planners, engineers, environmental consultants, appraisers, lawyers, or brokers.
+
+---
+
+## 2. Current Development Status
+
+The project has progressed through several HTML prototype iterations.
+
+### Existing functionality
+
+- Interactive development scenario explorer
+- Financial pro forma calculations
+- Side-by-side scenario comparison
+- Site-specific research and evidence
+- Risk registers
+- Development assumptions
+- Preliminary investor reporting
+- Real-property case study
+
+### Existing prototype
+
+The latest known prototype is:
+
+`development-feasibility-fleming-road-v0.4-1.html`
+
+Inspect the actual repository to determine which version is current.
+
+Do not assume that previously requested improvements have been implemented.
+
+**Important:** Preserve working functionality when modifying the application. Prefer incremental improvements over rebuilding the entire product.
+
+---
+
+## 3. Reference Property
+
+### 0 Fleming Road, Minden Hills, Ontario
+
+- MLS: X12262979
+- REALTOR.ca listing ID: 28559370
+- Jurisdiction: Township of Minden Hills, Ontario
+
+This property serves as the initial real-world development feasibility case study.
+
+Research categories include:
+
+1. Property identification and ownership information
+2. Official Plan designations
+3. Zoning and permitted uses
+4. Environmental constraints and floodplain mapping
+5. Water, wastewater, and utility servicing
+6. Road access and infrastructure
+7. Potential development scenarios
+8. Market evidence and financial assumptions
+9. Approvals, costs, risks, and outstanding investigations
+
+Do not represent hypothetical development potential as legally permitted development.
+
+### Known issue: DF-005 — Multiple listing agents
+
+The case study identified two associated listing agents:
+
+- Drew Staniforth
+- Terry Carr
+
+Both were associated with RE/MAX Professionals North.
+
+Different listing sources emphasized different contacts.
+
+**Required application behavior:**
+
+- Support multiple listing agents per property.
+- Preserve the source of each contact.
+- Display verification dates.
+- Do not overwrite one contact with another.
+- Do not designate a primary agent without supporting evidence.
+
+This correction was researched, but its implementation remains unconfirmed.
+
+---
+
+## 4. Research and Evidence Architecture
+
+Every significant property claim should be traceable.
+
+Use these evidence classifications:
+
+| Status | Meaning |
+|---|---|
+| VERIFIED | Supported by an authoritative source |
+| REPORTED | Described by a secondary source |
+| ASSUMED | Explicit modeling assumption |
+| INFERRED | Analytical conclusion drawn from evidence |
+| CONFLICTED | Sources materially disagree |
+| UNKNOWN | Insufficient evidence |
+
+For every important research finding, record:
+
+- Claim
+- Source URL
+- Source organization
+- Retrieval date
+- Jurisdiction
+- Evidence classification
+- Confidence
+- Implications
+- Outstanding verification requirements
+
+Prioritize government records, planning authorities, conservation authorities, and official datasets over property listing descriptions.
+
+Never invent zoning permissions, environmental findings, infrastructure availability, or financial market data.
+
+---
+
+## 5. Financial Modeling Standards
+
+The financial engine must be auditable and transparent.
+
+Separate:
+
+- Land acquisition
+- Hard construction costs
+- Soft development costs
+- Professional fees
+- Contingencies
+- Financing and carrying costs
+- Taxes and development charges
+- Operating costs
+- Sales or rental revenue
+
+### Required functionality
+
+1. Editable assumptions with explicit units.
+2. Recalculations when dependent inputs change.
+3. Persistent, independently editable scenarios.
+4. Side-by-side comparisons.
+5. Sensitivity analysis.
+6. Clear definitions for financial metrics.
+7. Source references for externally derived assumptions.
+8. Explicit warnings for speculative figures.
+
+### Validation
+
+Test for:
+
+- Negative and zero values
+- Division by zero
+- Invalid input combinations
+- Unit conversion errors
+- Gross versus net area confusion
+- Double-counted expenses
+- Financing timing errors
+- Incorrect cash-flow signs
+- Lost scenario state
+- Import/export failures
+
+Do not present illustrative returns as investment forecasts.
+
+---
+
+## 6. UX and Product Direction
+
+The interface should feel like a professional analytical workspace rather than a generic property listing website.
+
+### Design principles
+
+**Clarity:** Complex information must remain understandable.
+
+**Traceability:** Users should be able to inspect the evidence behind important conclusions.
+
+**Exploration:** Users should compare alternative scenarios without losing earlier work.
+
+**Transparency:** Uncertainty should be visible rather than hidden.
+
+**Accessibility:** Support keyboard navigation, clear labels, readable contrast, and responsive layouts.
+
+### Desired modules
+
+- Property Dashboard
+- Parcel Intelligence
+- Planning & Zoning
+- Environmental Constraints
+- Servicing & Infrastructure
+- Scenario Explorer
+- Financial Model
+- Risk Register
+- Evidence Library
+- Listing & Contacts
+- Investor Reports
+
+These are target modules, not a claim that they already exist.
+
+---
+
+## 7. Commercial Context
+
+DF Studio is being developed as both software and a potential consulting service.
+
+### Initial service offering
+
+**Preliminary Site Intelligence & Feasibility Decision Support**
+
+Potential deliverables:
+
+- Property research packages
+- Preliminary zoning investigations
+- Site constraint summaries
+- Development scenario comparisons
+- Financial feasibility models
+- Evidence and risk registers
+- Decision-support reports
+
+Specialist assessments must be performed or reviewed by appropriately qualified professionals.
+
+### Business development strategy
+
+**2026 Q4:** Validate the service with industry contacts and prospective buyers.
+
+**2027 H1:** Target initial paid pilots and referenceable case studies.
+
+**2027 H2:** Explore repeat engagements and larger consulting partnerships.
+
+**2028:** Aspirational target of signing a CAD $100,000–$150,000 contract.
+
+These are planning targets, not revenue forecasts.
+
+The immediate priority is obtaining evidence of willingness to pay, not building every conceivable feature.
+
+---
+
+## 8. Engineering Instructions for Coding Agents
+
+Before implementing changes:
+
+1. Inspect the repository structure.
+2. Identify the current application entry point.
+3. Read existing documentation and issue reports.
+4. Determine which features are implemented versus planned.
+5. Identify relevant dependencies and build commands.
+6. Reproduce reported defects.
+7. Propose the smallest reliable implementation.
+
+### Implementation rules
+
+- Do not silently replace the existing architecture.
+- Preserve working user data and scenario functionality.
+- Keep financial calculations independently testable.
+- Separate source data from user assumptions.
+- Avoid hardcoded claims about individual properties.
+- Prefer reusable modules and explicit data structures.
+- Do not add unnecessary dependencies.
+- Keep the prototype functional during incremental development.
+- Never fabricate test results or claim verification without running tests.
+
+### Required development response
+
+For each substantial change, report:
+
+**Objective:** What is being improved.
+
+**Files:** Which files were inspected or changed.
+
+**Implementation:** What was actually modified.
+
+**Tests:** Which tests ran and their results.
+
+**Known limitations:** What remains incomplete.
+
+**Next steps:** The recommended next development task.
+
+---
+
+## 9. Current Priorities
+
+### Priority 1 — Reliability
+
+Audit financial calculations, input validation, scenario persistence, and known data reconciliation bugs.
+
+### Priority 2 — Real Parcel Research
+
+Improve the Fleming Road case study with authoritative, source-linked evidence.
+
+### Priority 3 — Demonstration Readiness
+
+Prepare a coherent five-minute demonstration for industry feedback.
+
+### Priority 4 — Reporting
+
+Improve the clarity, traceability, and presentation of exported feasibility reports.
+
+### Priority 5 — Commercial Validation
+
+Support small, credible paid research engagements before pursuing enterprise-level functionality.
+
+---
+
+## 10. Project Boundaries
+
+DF Studio is an independent commercial project.
+
+It must remain distinct from:
+
+- Mind Garden
+- Midrash
+- Personal creative practice
+- Other experimental applications
+
+Do not merge their branding, product architecture, user data, or development roadmaps without explicit instructions.
+
+---
+
+## 11. Immediate Agent Assignment
+
+Begin by auditing the current repository.
+
+Produce:
+
+1. A repository architecture overview.
+2. A verified feature inventory.
+3. A prioritized bug and technical-debt register.
+4. An assessment of financial model reliability.
+5. A comparison against the intended product capabilities.
+6. A recommended implementation roadmap.
+
+Do not immediately rewrite the application.
+
+First establish what works, what is missing, and what requires verification.
+
+**Primary objective:** Move DF Studio from an experimental feasibility prototype toward a reliable, demonstrable, commercially testable decision-support product.
